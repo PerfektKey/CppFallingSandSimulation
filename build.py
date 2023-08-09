@@ -19,7 +19,6 @@ for f in files:
     if fext == ".cpp":
         srcf.append(f)
 
-print(srcf)
 CC="clang++"
 FLAGS="-std=c++20 -Wall -g"
 INC="-lsfml-graphics -lsfml-window -lsfml-system"
