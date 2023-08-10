@@ -21,14 +21,14 @@ for f in files:
 
 CC="clang++"
 FLAGS="-std=c++20 -Wall -g"
-INC="-lsfml-graphics -lsfml-window -lsfml-system"
+INC="-lsfml-graphics -lsfml-window -lsfml-system -L./Depend/ -lPJsonParser"
 
 bin="bin"
-ext=""
+ExecExt=""
 
 for f in srcf:
     print(CC + " " + FLAGS + " -c " + f + " -o " + bin + "/" + os.path.splitext(os.path.basename(f))[0] + ".o")
     os.system( CC + " " + FLAGS + " -c " + f + " -o " + bin + "/" + os.path.splitext(os.path.basename(f))[0] + ".o")
 
-print(CC + " " + bin + "/*.o" + FLAGS + " -o " + " main" + ext + " " + INC)
-os.system(CC + " " + bin + "/*.o " + FLAGS  + " -o " + " main" + ext + " " + INC)
+print(CC + " " + bin + "/*.o" + FLAGS + " -o " + " main" + ExecExt + " " + INC)
+os.system(CC + " " + bin + "/*.o " + FLAGS  + " -o " + " main" + ExecExt + " " + INC)
