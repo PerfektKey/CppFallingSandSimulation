@@ -4,7 +4,8 @@
 #include "header/map.hpp"
 #include "header/element.hpp"
 #include "header/solid.hpp"
-
+#include "header/fluid.hpp"
+#include "header/gas.hpp"
 
 int main () {
 
@@ -36,10 +37,10 @@ int main () {
 
 		elapsedTime -= deltaTime;
 
-		element* el = new solid(&world, ElementTypes::solid, sf::Color(225,210,15), {10, 0}, 5);
+		element* el = new gas(&world, ElementTypes::solid, sf::Color(225,210,15), {10, 17}, 5);
 		
-		if (world.isFree(10,0))
-			world.set(10,0, el);
+		if (world.isFree(10,17))
+			world.set(10,17, el);
 		else
 			delete el;
 		world.update(t);
